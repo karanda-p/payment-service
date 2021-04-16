@@ -1,9 +1,9 @@
 package ru.itfbgroup.paymentservice.service;
 
 import org.springframework.stereotype.Service;
-import ru.itfbgroup.paymentservice.entity.Order;
-import ru.itfbgroup.paymentservice.entity.PaymentDetails;
-import ru.itfbgroup.paymentservice.entity.PaymentStatus;
+import ru.itfbgroup.paymentservice.model.Order;
+import ru.itfbgroup.paymentservice.model.PaymentDetails;
+import ru.itfbgroup.paymentservice.model.PaymentStatus;
 
 
 @Service

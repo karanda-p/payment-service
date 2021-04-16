@@ -1,4 +1,4 @@
-package ru.itfbgroup.paymentservice.entity;
+package ru.itfbgroup.paymentservice.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;

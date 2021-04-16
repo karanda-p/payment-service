@@ -1,4 +1,4 @@
-package ru.itfbgroup.paymentservice.entity;
+package ru.itfbgroup.paymentservice.model;
 
 public enum OrderStatus {
 
