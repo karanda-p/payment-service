@@ -14,7 +14,6 @@ public class PaymentService {
         PaymentDetails paymentDetails = new PaymentDetails();
         paymentDetails.setAmount(order.getAmount());
         paymentDetails.setPaymentStatus(PaymentStatus.DONE);
-        System.out.println("!!!!!!!!!!!!!!!!");
         return paymentDetails;
     }
 }
