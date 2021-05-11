@@ -9,6 +9,8 @@ import ru.itfbgroup.paymentservice.model.Order;
 import ru.itfbgroup.paymentservice.model.PaymentDetails;
 import ru.itfbgroup.paymentservice.model.PaymentStatus;
 
+import java.time.LocalDateTime;
+
 
 @Service
 @RequiredArgsConstructor
@@ -24,7 +26,10 @@ public class PaymentService {
         PaymentDetails paymentDetails = new PaymentDetails();
         paymentDetails.setAmount(order.getAmount());
         paymentDetails.setPaymentStatus(PaymentStatus.DONE);
+        paymentDetails.setDoneDate(LocalDateTime.now());
+        paymentDetails.setDetails(order.getId());
         return paymentDetails;
+        
     }
 
     public void commitPaymentRabbit(Order order){

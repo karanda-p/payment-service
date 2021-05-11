@@ -16,17 +16,11 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 public class ListenerConfig {
 
-    @Value("${message.food-delivery-queue}")
+    @Value("${message.payment-queue}")
     private String queueName;
 
     @Value("${message.payment-routing-key}")
     private String routingKey;
-
-
-    @Bean
-    public TopicExchange receiverExchange() {
-        return new TopicExchange("eventExchange");
-    }
 
     @Bean
     public Queue eventReceivingQueue() {

@@ -12,5 +12,5 @@ spring:
 
 message:
   payment-queue: paymentQueue
-  food-delivery-routing-key: message.fds
+  food-delivery-routing-key: message.fds.payment
   payment-routing-key: message.payment

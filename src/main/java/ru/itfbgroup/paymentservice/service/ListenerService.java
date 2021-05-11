@@ -11,7 +11,7 @@ public class ListenerService {
 
     private final PaymentService paymentService;
 
-    @RabbitListener(queues = "${message.food-delivery-queue}")
+    @RabbitListener(queues = "${message.payment-queue}")
     public void receive(Order order){
         paymentService.commitPaymentRabbit(order);
     }
