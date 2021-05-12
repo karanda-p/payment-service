@@ -1,5 +1,7 @@
 package ru.itfbgroup.paymentservice.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Binding;
@@ -10,6 +12,9 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.converter.MappingJackson2MessageConverter;
+
+import javax.annotation.PostConstruct;
 
 @Configuration
 @Slf4j
@@ -42,8 +47,10 @@ public class ListenerConfig {
     }
 
     @Bean
-    public Jackson2JsonMessageConverter jacksonMessageConverter(){
-        return new Jackson2JsonMessageConverter();
+    public MappingJackson2MessageConverter jackson2MessageConverter(){
+        return new MappingJackson2MessageConverter();
     }
+
+
 
 }

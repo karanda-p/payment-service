@@ -21,7 +21,7 @@ public class PaymentService {
     @Value("${message.food-delivery-routing-key}")
     private String routingKey;
 
-    public PaymentDetails commitPayment(Order order){
+    public PaymentDetails commitPayment(Order order) {
 
         PaymentDetails paymentDetails = new PaymentDetails();
         paymentDetails.setAmount(order.getAmount());
@@ -29,10 +29,11 @@ public class PaymentService {
         paymentDetails.setDoneDate(LocalDateTime.now());
         paymentDetails.setDetails(order.getId());
         return paymentDetails;
-        
+
     }
 
-    public void commitPaymentRabbit(Order order){
-        template.convertAndSend(exchange.getName(), routingKey, commitPayment(order));
+    public void commitPaymentRabbit(Order order) {
+        PaymentDetails paymentDetails = commitPayment(order);
+        template.convertAndSend(exchange.getName(), routingKey, paymentDetails);
     }
 }
